@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.mvc
+package com.qiaodan.jetpackdemo.mvp
 
 import java.util.Random
 
@@ -8,27 +8,36 @@ import java.util.Random
  */
 class UserModel {
 
+    companion object {
+        const val STATUS_LOADING = 0
+        const val STATUS_LOGIN_SUC = 1
+        const val STATUS_LOGIN_FAIL = 2
+    }
+
     val api by lazy {
         Api()
     }
 
-    fun doLogin(callback: LoginCallback) {
-        callback.onLoading()
+    fun doLogin(account: String, password: String, block: (Int) -> Unit) {
+
+        block.invoke(STATUS_LOADING)
+
+
         val value: Int = Random().nextInt(2)
 
         when (value) {
             0 -> {
-                callback.onLoginFail()
+                block.invoke(STATUS_LOGIN_SUC)
             }
             1 -> {
-                callback.onLoginSuccess()
+                block.invoke(STATUS_LOGIN_FAIL)
             }
 
         }
     }
 
 
-    fun checkUserStatus(account:String,block: (Int) -> Unit) {
+    fun checkUserStatus(account: String, block: (Int) -> Unit) {
         //1-已登录 0-未登录
         block.invoke(Random().nextInt(2))
     }
