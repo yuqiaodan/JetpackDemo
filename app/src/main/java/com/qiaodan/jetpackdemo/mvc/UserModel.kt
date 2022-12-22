@@ -25,18 +25,12 @@ class UserModel {
             }
 
         }
-
-
     }
 
 
     fun checkUserStatus(account:String,block: (Int) -> Unit) {
-
-
         //1-已登录 0-未登录
         block.invoke(Random().nextInt(2))
-
-
     }
 
 
