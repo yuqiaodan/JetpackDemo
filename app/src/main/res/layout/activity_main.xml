@@ -10,10 +10,22 @@
 
 
     <Button
-        android:id="@+id/btn_mvc_login"
+        android:id="@+id/btn_login_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="mvc登录" />
+        android:text="登录例子" />
 
 
+    <Button
+        android:id="@+id/btn_play_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放界面" />
+
+
+    <Button
+        android:id="@+id/btn_play_flow_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放界面（小）" />
 </LinearLayout>
