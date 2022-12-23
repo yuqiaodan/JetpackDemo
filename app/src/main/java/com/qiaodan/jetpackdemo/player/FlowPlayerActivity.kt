@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_player_flow.*
  *
  * */
 
-class FlowPlayerActivity : AppCompatActivity(), PlayerContract {
+class FlowPlayerActivity : AppCompatActivity() {
 
     private val playerPresenter by lazy {
         PlayerPresenter.instance
@@ -24,36 +24,26 @@ class FlowPlayerActivity : AppCompatActivity(), PlayerContract {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_flow)
-        playerPresenter.registerCallback(this)
+
         btn_play_flow.setOnClickListener {
             playerPresenter.playOrPause()
+        }
+
+        playerPresenter.currentPlayStatus.addListener {
+            when (it) {
+                PlayerPresenter.PlayStatus.PLAYING -> {
+                    btn_play_flow.text = "播放中 点击暂停"
+                }
+
+                PlayerPresenter.PlayStatus.PAUSE -> {
+                    btn_play_flow.text = "暂停中 点击播放"
+                }
+
+                else -> {}
+            }
         }
 
     }
 
 
-    override fun onPlaying() {
-        btn_play_flow.text = "播放中 点击暂停"
-    }
-
-    override fun onMusicPause() {
-        btn_play_flow.text = "暂停中 点击播放"
-    }
-
-
-    override fun onTitleChange(title: String) {
-
-    }
-
-    override fun onProgressChange(current: Int) {
-    }
-
-    override fun onCoverChange(cover: String) {
-    }
-
-
-    override fun onDestroy() {
-        super.onDestroy()
-        playerPresenter.unregisterCallback(this)
-    }
 }

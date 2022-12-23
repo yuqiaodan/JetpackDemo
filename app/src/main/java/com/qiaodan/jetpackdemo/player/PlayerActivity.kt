@@ -6,19 +6,44 @@ import android.view.View
 import com.qiaodan.jetpackdemo.R
 import kotlinx.android.synthetic.main.activity_player.*
 
-class PlayerActivity : AppCompatActivity(), PlayerContract, View.OnClickListener {
+class PlayerActivity : AppCompatActivity(), View.OnClickListener {
 
     private val playerPresenter by lazy {
         PlayerPresenter.instance
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player)
-        playerPresenter.registerCallback(this)
         setListener()
+        initDataListener()
     }
+
+
+    private fun initDataListener() {
+        //数据监听 监听音乐变化
+        playerPresenter.currentMusic.addListener { musicTitle ->
+            tv_title.text = "歌曲：$musicTitle"
+        }
+
+
+        //数据监听 监听状态变化
+        playerPresenter.currentPlayStatus.addListener { status ->
+            when (status) {
+                PlayerPresenter.PlayStatus.PLAYING -> {
+                    tv_status.text = "正在播放"
+                }
+
+                PlayerPresenter.PlayStatus.PAUSE -> {
+                    tv_status.text = "已暂停"
+
+                }
+
+                else -> {}
+            }
+        }
+    }
+
 
     private fun setListener() {
 
@@ -27,7 +52,6 @@ class PlayerActivity : AppCompatActivity(), PlayerContract, View.OnClickListener
         btn_last.setOnClickListener(this)
 
         btn_next.setOnClickListener(this)
-
 
 
     }
@@ -48,32 +72,7 @@ class PlayerActivity : AppCompatActivity(), PlayerContract, View.OnClickListener
 
     }
 
-    override fun onTitleChange(title: String) {
-        tv_title.text = title
-    }
 
-    override fun onProgressChange(current: Int) {
-    }
-
-    override fun onPlaying() {
-        tv_status.text = "正在播放"
-
-
-    }
-
-    override fun onMusicPause() {
-        tv_status.text = "已暂停"
-
-    }
-
-    override fun onCoverChange(cover: String) {
-    }
-
-
-    override fun onDestroy() {
-        super.onDestroy()
-        playerPresenter.unregisterCallback(this)
-    }
 
 
 }
