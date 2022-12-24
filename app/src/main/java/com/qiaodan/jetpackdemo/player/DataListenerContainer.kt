@@ -27,7 +27,6 @@ class DataListenerContainer<T> {
     fun addListener(block: (T?) -> Unit) {
         if (!blocks.contains(block)) {
             blocks.add(block)
-            block.invoke(value)
         }
     }
 
