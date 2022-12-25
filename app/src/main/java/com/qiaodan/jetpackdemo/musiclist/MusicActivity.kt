@@ -3,6 +3,9 @@ package com.qiaodan.jetpackdemo.musiclist
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.qiaodan.jetpackdemo.R
+import com.qiaodan.jetpackdemo.base.BaseActivity
+import com.qiaodan.jetpackdemo.lifecycle.ILifecycleOwner
+import com.qiaodan.jetpackdemo.lifecycle.LifeCycleProvider
 import kotlinx.android.synthetic.main.activity_music.*
 
 
@@ -15,10 +18,10 @@ import kotlinx.android.synthetic.main.activity_music.*
  * onStop 不可见 不可交互
  * onDestroy 销毁
  * */
-class MusicActivity : AppCompatActivity() {
+class MusicActivity : BaseActivity(){
 
     private val musicPresenter by lazy {
-        MusicPresenter()
+        MusicPresenter(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,14 +47,12 @@ class MusicActivity : AppCompatActivity() {
     }
 
     private fun initViewListener() {
-
-
         btn_get_music_list.setOnClickListener {
             musicPresenter.getMusic()
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
+
+
+
 }

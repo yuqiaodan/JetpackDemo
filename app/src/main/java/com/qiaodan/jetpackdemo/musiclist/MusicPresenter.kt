@@ -1,5 +1,7 @@
 package com.qiaodan.jetpackdemo.musiclist
 
+import com.qiaodan.jetpackdemo.lifecycle.ILifecycleOwner
+import com.qiaodan.jetpackdemo.lifecycle.ILiftCycle
 import com.qiaodan.jetpackdemo.musiclist.data.MusicBean
 import com.qiaodan.jetpackdemo.player.DataListenerContainer
 
@@ -7,10 +9,19 @@ import com.qiaodan.jetpackdemo.player.DataListenerContainer
  * author: created by yuqiaodan on 2022/12/23 17:56
  * description:
  */
-class MusicPresenter {
+class MusicPresenter(owner: ILifecycleOwner) {
 
     private val musicModel by lazy {
         MusicModel()
+    }
+
+    private val viewLifeImpl by lazy {
+        ViewLifeImpl()
+    }
+
+
+    init {
+        owner.getLifecycleProvider().addLifeListener(viewLifeImpl)
     }
 
     enum class MusicLoadStatus {
@@ -27,10 +38,7 @@ class MusicPresenter {
     private var size = 30
 
     fun getMusic() {
-
-
         loadStatus.value = MusicLoadStatus.LOADING
-
         musicModel.loadMusicByPage(page, size, object : MusicModel.OnMusicLoadResult {
             override fun onSuccess(result: List<MusicBean>) {
                 musicList.value = result
@@ -45,6 +53,36 @@ class MusicPresenter {
                 loadStatus.value = MusicLoadStatus.ERROR
             }
         })
+    }
+
+
+    inner class ViewLifeImpl : ILiftCycle {
+        //绑定presenter和activity的生命周期
+        override fun onCreate() {
+            println("MusicPresenter onCreate")
+        }
+
+        override fun onStart() {
+            println("MusicPresenter onStart")
+
+        }
+
+        override fun onResume() {
+            println("MusicPresenter onResume")
+
+        }
+
+        override fun onPause() {
+            println("MusicPresenter onPause")
+        }
+
+        override fun onStop() {
+            println("MusicPresenter onStop")
+        }
+
+        override fun onDestroy() {
+            println("MusicPresenter onDestroy")
+        }
 
 
     }

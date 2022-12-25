@@ -1,5 +1,7 @@
 package com.qiaodan.jetpackdemo.player
 
+import com.qiaodan.jetpackdemo.lifecycle.ILiftCycle
+
 
 /**
  * author: created by yuqiaodan on 2022/12/22 22:48
@@ -9,7 +11,7 @@ package com.qiaodan.jetpackdemo.player
  *
  *
  */
-class PlayerPresenter private constructor() {
+class PlayerPresenter private constructor() :ILiftCycle{
 
     //歌曲列表
     private val musicList = listOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9)
@@ -69,6 +71,24 @@ class PlayerPresenter private constructor() {
             }
         }
         currentPlayStatus.value = PlayStatus.PLAYING
+    }
+
+    override fun onCreate() {
+    }
+
+    override fun onStart() {
+    }
+
+    override fun onResume() {
+    }
+
+    override fun onPause() {
+    }
+
+    override fun onStop() {
+    }
+
+    override fun onDestroy() {
     }
 
 

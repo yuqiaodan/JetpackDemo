@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.qiaodan.jetpackdemo.R
+import com.qiaodan.jetpackdemo.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_player.*
 
-class PlayerActivity : AppCompatActivity(), View.OnClickListener {
+class PlayerActivity : BaseActivity(), View.OnClickListener {
 
     private val playerPresenter by lazy {
         PlayerPresenter.instance
+    }
+
+    init {
+        lifeProvider.addLifeListener(playerPresenter)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,8 +76,6 @@ class PlayerActivity : AppCompatActivity(), View.OnClickListener {
         }
 
     }
-
-
 
 
 }
