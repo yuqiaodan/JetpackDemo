@@ -1,5 +1,8 @@
 package com.qiaodan.jetpackdemo.player
 
+import android.os.Looper
+import com.qiaodan.jetpackdemo.App
+
 /**
  * author: created by yuqiaodan on 2022/12/23 17:14
  * description:
@@ -16,8 +19,19 @@ class DataListenerContainer<T> {
         set(v: T?) {
             //给value赋值 这里调用关键字field
             field = v
-            blocks.forEach {
-                it.invoke(v)
+
+            //判断当前线程是否是主线程 如果是再执行
+            if (Looper.getMainLooper().thread === Thread.currentThread()) {
+                blocks.forEach {
+                    it.invoke(v)
+                }
+            } else {
+                //确保是主线程更新
+                App.handler.post {
+                    blocks.forEach {
+                        it.invoke(v)
+                    }
+                }
             }
         }
         //取value值  由于set只是取值 没有任何实现 可忽略
