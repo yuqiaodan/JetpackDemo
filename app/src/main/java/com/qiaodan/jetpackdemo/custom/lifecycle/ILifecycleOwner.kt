@@ -6,6 +6,6 @@ package com.qiaodan.jetpackdemo.custom.lifecycle
  */
 interface ILifecycleOwner {
 
-    fun getLifecycleProvider(): LifeCycleProvider
+    fun getLifecycleProvider(): ILifeCycle
 
 }

@@ -1,6 +1,6 @@
 package com.qiaodan.jetpackdemo.custom.lifecycle
 
-interface ILiftCycle {
+interface ILiftCycleObserver {
     fun onCreate()
     fun onStart()
     fun onResume()

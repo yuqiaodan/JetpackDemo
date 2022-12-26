@@ -1,7 +1,7 @@
 package com.qiaodan.jetpackdemo.custom.musiclist
 
 import com.qiaodan.jetpackdemo.custom.lifecycle.ILifecycleOwner
-import com.qiaodan.jetpackdemo.custom.lifecycle.ILiftCycle
+import com.qiaodan.jetpackdemo.custom.lifecycle.ILiftCycleObserver
 import com.qiaodan.jetpackdemo.custom.musiclist.data.MusicBean
 
 /**
@@ -55,7 +55,7 @@ class MusicPresenter(owner: ILifecycleOwner) {
     }
 
 
-    inner class ViewLifeImpl : ILiftCycle {
+    inner class ViewLifeImpl : ILiftCycleObserver {
         //绑定presenter和activity的生命周期
         override fun onCreate() {
             println("MusicPresenter onCreate")

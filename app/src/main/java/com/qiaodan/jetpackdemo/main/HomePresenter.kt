@@ -2,7 +2,6 @@ package com.qiaodan.jetpackdemo.main
 
 import android.util.Log
 import androidx.lifecycle.*
-import androidx.lifecycle.Lifecycle.Event
 import com.qiaodan.jetpackdemo.App
 
 /**
@@ -20,9 +19,24 @@ class HomePresenter(private val owner: LifecycleOwner) : LifecycleEventObserver,
         owner.lifecycle.addObserver(this)
     }
 
-    fun test() {
+    val liveMusicList = MutableLiveData<List<Int>>()
 
-        Log.d(App.TAG, "HomePresenter 当前生命周期${owner.lifecycle.currentState}")
+    var index = 5
+
+
+    fun flushMusicList() {
+        index++
+        Thread {
+            Thread.sleep(3000L)
+            val arrayList = arrayListOf<Int>()
+            for (i in 1..index) {
+                arrayList.add(i)
+            }
+            //使用postValue保证在主线程通知观察者此次数据变化
+            liveMusicList.postValue(arrayList)
+            Log.d(App.TAG, "HomePresenter flushMusicList 生成最新List: $arrayList")
+        }.start()
+
 
     }
 

@@ -4,52 +4,52 @@ package com.qiaodan.jetpackdemo.custom.lifecycle
  * 管理所有注册进来的ILifeCycle接口
  * 保存当前View的生命周期状态
  * */
-class LifeCycleProvider {
+class ILifeCycle {
 
-    private var currentState: LifeState? = null
+    private var currentState: ILifeState? = null
 
     //因为一个View可能存在多个Presenter 所以这里用集合 可以添加多个ILiftCycle
-    private val lifecycleListener = arrayListOf<ILiftCycle>()
+    private val lifecycleListener = arrayListOf<ILiftCycleObserver>()
 
-    fun addLifeListener(listener: ILiftCycle) {
+    fun addLifeListener(listener: ILiftCycleObserver) {
         if (!lifecycleListener.contains(listener)) {
             lifecycleListener.add(listener)
         }
     }
 
-    fun removeLifeListener(listener: ILiftCycle) {
+    fun removeLifeListener(listener: ILiftCycleObserver) {
         lifecycleListener.remove(listener)
     }
 
-    fun makeLifeState(state: LifeState) {
+    fun makeLifeState(state: ILifeState) {
         currentState = state
         when (state) {
-            LifeState.CREATE -> {
+            ILifeState.CREATE -> {
                 lifecycleListener.forEach {
                     it.onCreate()
                 }
             }
-            LifeState.START -> {
+            ILifeState.START -> {
                 lifecycleListener.forEach {
                     it.onStart()
                 }
             }
-            LifeState.RESUME -> {
+            ILifeState.RESUME -> {
                 lifecycleListener.forEach {
                     it.onResume()
                 }
             }
-            LifeState.PAUSE -> {
+            ILifeState.PAUSE -> {
                 lifecycleListener.forEach {
                     it.onPause()
                 }
             }
-            LifeState.STOP -> {
+            ILifeState.STOP -> {
                 lifecycleListener.forEach {
                     it.onStop()
                 }
             }
-            LifeState.DESTROY -> {
+            ILifeState.DESTROY -> {
                 lifecycleListener.forEach {
                     it.onDestroy()
                 }
