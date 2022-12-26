@@ -34,7 +34,8 @@ class HomePresenter(private val owner: LifecycleOwner) : LifecycleEventObserver,
             }
             //使用postValue保证在主线程通知观察者此次数据变化
             liveMusicList.postValue(arrayList)
-            Log.d(App.TAG, "HomePresenter flushMusicList 生成最新List: $arrayList")
+            //postValue完毕后立刻读取 会还是上一次的值 因为此时还未将value设置进去 观察者收到回调后再读取就更新了
+            Log.d(App.TAG, "HomePresenter flushMusicList 生成最新List: $arrayList  liveMusicList.value${liveMusicList.value} ")
         }.start()
 
 

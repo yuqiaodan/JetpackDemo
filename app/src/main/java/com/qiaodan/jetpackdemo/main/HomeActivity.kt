@@ -69,7 +69,7 @@ class HomeActivity : AppCompatActivity() {
 
         presenter.liveMusicList.observe(this, object : Observer<List<Int>> {
             override fun onChanged(list: List<Int>?) {
-                Log.d(App.TAG, "HomeActivity 收到数据变化${list.toString()}")
+                Log.d(App.TAG, "HomeActivity 收到数据变化${list.toString()}  ")
                 tv_music_list.text = list.toString()
             }
         })
