@@ -1,13 +1,12 @@
-package com.qiaodan.jetpackdemo.musiclist
+package com.qiaodan.jetpackdemo.custom.musiclist
 
-import com.qiaodan.jetpackdemo.lifecycle.ILifecycleOwner
-import com.qiaodan.jetpackdemo.lifecycle.ILiftCycle
-import com.qiaodan.jetpackdemo.musiclist.data.MusicBean
-import com.qiaodan.jetpackdemo.player.DataListenerContainer
+import com.qiaodan.jetpackdemo.custom.lifecycle.ILifecycleOwner
+import com.qiaodan.jetpackdemo.custom.lifecycle.ILiftCycle
+import com.qiaodan.jetpackdemo.custom.musiclist.data.MusicBean
 
 /**
  * author: created by yuqiaodan on 2022/12/23 17:56
- * description:
+ * description:自定义
  */
 class MusicPresenter(owner: ILifecycleOwner) {
 

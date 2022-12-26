@@ -1,18 +1,20 @@
-package com.qiaodan.jetpackdemo.base
+package com.qiaodan.jetpackdemo.custom.base
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import com.qiaodan.jetpackdemo.lifecycle.LifeCycleProvider
-import com.qiaodan.jetpackdemo.lifecycle.LifeState
+import androidx.appcompat.app.AppCompatActivity
+import com.qiaodan.jetpackdemo.custom.lifecycle.ILifecycleOwner
+import com.qiaodan.jetpackdemo.custom.lifecycle.ILiftCycle
+import com.qiaodan.jetpackdemo.custom.lifecycle.LifeCycleProvider
+import com.qiaodan.jetpackdemo.custom.lifecycle.LifeState
 
-/**
- * Create by yuqiaodan 2022/12/25
- * Description:
- */
-open class BaseFragment:Fragment() {
+open class BaseActivity : AppCompatActivity(), ILifecycleOwner {
 
     val lifeProvider by lazy {
         LifeCycleProvider()
+    }
+
+    override fun getLifecycleProvider(): LifeCycleProvider {
+        return lifeProvider
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,10 +46,6 @@ open class BaseFragment:Fragment() {
         super.onDestroy()
         lifeProvider.makeLifeState(LifeState.DESTROY)
     }
-
-
-
-
 
 
 }

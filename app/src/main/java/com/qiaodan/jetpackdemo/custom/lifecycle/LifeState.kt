@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.lifecycle
+package com.qiaodan.jetpackdemo.custom.lifecycle
 
 /**
  * Create by yuqiaodan 2022/12/25

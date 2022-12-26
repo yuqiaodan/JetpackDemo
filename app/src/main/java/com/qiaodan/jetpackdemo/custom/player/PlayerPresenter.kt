@@ -1,6 +1,7 @@
-package com.qiaodan.jetpackdemo.player
+package com.qiaodan.jetpackdemo.custom.player
 
-import com.qiaodan.jetpackdemo.lifecycle.ILiftCycle
+import com.qiaodan.jetpackdemo.custom.lifecycle.ILiftCycle
+import com.qiaodan.jetpackdemo.custom.musiclist.DataListenerContainer
 
 
 /**
@@ -11,7 +12,7 @@ import com.qiaodan.jetpackdemo.lifecycle.ILiftCycle
  *
  *
  */
-class PlayerPresenter private constructor() :ILiftCycle{
+class PlayerPresenter private constructor() : ILiftCycle {
 
     //歌曲列表
     private val musicList = listOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9)

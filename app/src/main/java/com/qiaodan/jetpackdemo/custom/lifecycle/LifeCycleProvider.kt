@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.lifecycle
+package com.qiaodan.jetpackdemo.custom.lifecycle
 
 /***
  * 管理所有注册进来的ILifeCycle接口

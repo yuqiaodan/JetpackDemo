@@ -8,6 +8,7 @@ class App : Application() {
 
 
     companion object {
+        const val TAG="MyDemo"
 
         val handler = Handler(Looper.getMainLooper())
 

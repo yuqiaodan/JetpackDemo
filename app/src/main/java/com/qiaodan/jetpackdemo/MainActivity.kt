@@ -4,10 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.qiaodan.jetpackdemo.login.LoginActivity
-import com.qiaodan.jetpackdemo.musiclist.MusicActivity
-import com.qiaodan.jetpackdemo.player.FlowPlayerActivity
-import com.qiaodan.jetpackdemo.player.PlayerActivity
+import com.qiaodan.jetpackdemo.custom.login.LoginActivity
+import com.qiaodan.jetpackdemo.main.HomeActivity
+import com.qiaodan.jetpackdemo.custom.musiclist.MusicActivity
+import com.qiaodan.jetpackdemo.custom.player.FlowPlayerActivity
+import com.qiaodan.jetpackdemo.custom.player.PlayerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_play_flow_page.setOnClickListener(this)
         btn_music_list_page.setOnClickListener(this)
 
+        btn_home.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -35,6 +37,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_music_list_page->{
                 startActivity(Intent(this, MusicActivity::class.java))
+            }
+
+            R.id.btn_home->{
+                startActivity(Intent(this, HomeActivity::class.java))
+
             }
         }
 

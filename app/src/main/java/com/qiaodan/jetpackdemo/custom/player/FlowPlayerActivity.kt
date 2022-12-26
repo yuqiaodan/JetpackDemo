@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.player
+package com.qiaodan.jetpackdemo.custom.player
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,6 +1,6 @@
-package com.qiaodan.jetpackdemo.musiclist
+package com.qiaodan.jetpackdemo.custom.musiclist
 
-import com.qiaodan.jetpackdemo.musiclist.data.MusicBean
+import com.qiaodan.jetpackdemo.custom.musiclist.data.MusicBean
 
 /**
  * author: created by yuqiaodan on 2022/12/23 17:56

@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.musiclist.data
+package com.qiaodan.jetpackdemo.custom.musiclist.data
 
 /**
  * author: created by yuqiaodan on 2022/12/23 18:02

@@ -44,5 +44,11 @@
         android:text="音乐列表" />
 
 
+    <Button
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="官方LifeCycle例子" />
+
 
 </LinearLayout>

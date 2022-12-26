@@ -13,29 +13,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetpackDemo"
         tools:targetApi="31">
+
         <activity
-            android:name=".musiclist.MusicActivity"
+            android:name=".main.HomeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".custom.musiclist.MusicActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".player.FlowPlayerActivity"
+            android:name=".custom.player.FlowPlayerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".player.PlayerActivity"
+            android:name=".custom.player.PlayerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.qiaodan.jetpackdemo.login.LoginActivity"
+            android:name="com.qiaodan.jetpackdemo.custom.login.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

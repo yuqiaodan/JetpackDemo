@@ -1,9 +1,9 @@
-package com.qiaodan.jetpackdemo.musiclist
+package com.qiaodan.jetpackdemo.custom.musiclist
 
-import com.qiaodan.jetpackdemo.base.BaseFragment
+import com.qiaodan.jetpackdemo.custom.base.BaseFragment
 
 
-class MusicDetailFragment:BaseFragment() {
+class MusicDetailFragment: BaseFragment() {
 
    /* private val musicPresenter by lazy {
         MusicPresenter()

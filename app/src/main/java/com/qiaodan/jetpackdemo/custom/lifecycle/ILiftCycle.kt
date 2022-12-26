@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.lifecycle
+package com.qiaodan.jetpackdemo.custom.lifecycle
 
 interface ILiftCycle {
     fun onCreate()

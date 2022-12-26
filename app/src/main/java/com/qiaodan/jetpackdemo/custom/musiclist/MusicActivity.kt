@@ -1,11 +1,11 @@
-package com.qiaodan.jetpackdemo.musiclist
+package com.qiaodan.jetpackdemo.custom.musiclist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.qiaodan.jetpackdemo.R
-import com.qiaodan.jetpackdemo.base.BaseActivity
-import com.qiaodan.jetpackdemo.lifecycle.ILifecycleOwner
-import com.qiaodan.jetpackdemo.lifecycle.LifeCycleProvider
+import com.qiaodan.jetpackdemo.custom.base.BaseActivity
+import com.qiaodan.jetpackdemo.custom.lifecycle.ILifecycleOwner
+import com.qiaodan.jetpackdemo.custom.lifecycle.LifeCycleProvider
 import kotlinx.android.synthetic.main.activity_music.*
 
 
@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_music.*
  * onDestroy 销毁
  * */
 class MusicActivity : BaseActivity(){
+
 
     private val musicPresenter by lazy {
         MusicPresenter(this)
