@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.qiaodan.jetpackdemo.App
 import androidx.lifecycle.Observer
 import com.qiaodan.jetpackdemo.R
+import com.qiaodan.jetpackdemo.custom.player.PlayerPresenter
 import kotlinx.android.synthetic.main.activity_home.*
 
 /**
@@ -28,6 +29,35 @@ class HomeActivity : AppCompatActivity() {
 
     private fun initView() {
         btn_get_music_list.setOnClickListener { presenter.flushMusicList() }
+
+
+
+        btn_play.setOnClickListener {
+            if (LivePlayerState.instance.value == PlayerPresenter.PlayStatus.PLAYING) {
+                LivePlayerState.instance.postValue(PlayerPresenter.PlayStatus.PAUSE)
+            } else {
+                LivePlayerState.instance.postValue(PlayerPresenter.PlayStatus.PLAYING)
+
+            }
+        }
+
+        LivePlayerState.instance.observe(this,object :Observer<PlayerPresenter.PlayStatus>{
+            override fun onChanged(t: PlayerPresenter.PlayStatus?) {
+                Log.d(App.TAG, "HomeActivity 播放状态变化：${t}")
+
+                when (t) {
+                    PlayerPresenter.PlayStatus.PLAYING -> {
+                        btn_play.text = "播放中 点击暂停"
+                    }
+
+                    PlayerPresenter.PlayStatus.PAUSE -> {
+                        btn_play.text = "暂停中 点击播放"
+                    }
+                    else -> {}
+                }
+            }
+        })
+
 
     }
 

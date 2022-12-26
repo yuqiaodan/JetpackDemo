@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_play_page.setOnClickListener(this)
         btn_play_flow_page.setOnClickListener(this)
         btn_music_list_page.setOnClickListener(this)
-
         btn_home.setOnClickListener(this)
     }
 
@@ -44,6 +43,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             }
         }
-
     }
 }
