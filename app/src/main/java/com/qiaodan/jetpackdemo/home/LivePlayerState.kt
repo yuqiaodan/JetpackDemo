@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.main
+package com.qiaodan.jetpackdemo.home
 
 import androidx.lifecycle.LiveData
 import com.qiaodan.jetpackdemo.custom.player.PlayerPresenter

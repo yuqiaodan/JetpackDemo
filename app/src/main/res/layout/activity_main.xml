@@ -58,7 +58,14 @@
             android:layout_width="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_height="wrap_content"
-            android:text="官方LifeCycle例子" />
+            android:text="官方LifeCycle+LiveData例子" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_taobao"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content"
+        android:text="MVVM案例-淘宝 " />
 </LinearLayout>

@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.lifecycle.Observer
 import com.qiaodan.jetpackdemo.App
 import com.qiaodan.jetpackdemo.R
-import com.qiaodan.jetpackdemo.main.LivePlayerState
+import com.qiaodan.jetpackdemo.home.LivePlayerState
 import kotlinx.android.synthetic.main.activity_player_flow.*
 
 /**
