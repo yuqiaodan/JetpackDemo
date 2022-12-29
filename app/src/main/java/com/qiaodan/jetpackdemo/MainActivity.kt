@@ -9,42 +9,45 @@ import com.qiaodan.jetpackdemo.home.HomeActivity
 import com.qiaodan.jetpackdemo.custom.musiclist.MusicActivity
 import com.qiaodan.jetpackdemo.custom.player.FlowPlayerActivity
 import com.qiaodan.jetpackdemo.custom.player.PlayerActivity
+import com.qiaodan.jetpackdemo.databinding.ActivityMainBinding
 import com.qiaodan.jetpackdemo.taobao.OnSellActivity
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        btn_login_page.setOnClickListener(this)
-        btn_play_page.setOnClickListener(this)
-        btn_play_flow_page.setOnClickListener(this)
-        btn_music_list_page.setOnClickListener(this)
-        btn_home.setOnClickListener(this)
-        btn_taobao.setOnClickListener(this)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.btnLoginPage.setOnClickListener(this)
+        binding.btnPlayPage.setOnClickListener(this)
+        binding.btnPlayFlowPage.setOnClickListener(this)
+        binding.btnMusicListPage.setOnClickListener(this)
+        binding.btnHome.setOnClickListener(this)
+        binding.btnTaobao.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.btn_login_page -> {
+        when (v) {
+            binding.btnLoginPage -> {
                 startActivity(Intent(this, LoginActivity::class.java))
             }
-            R.id.btn_play_page->{
+            binding.btnPlayPage -> {
                 startActivity(Intent(this, PlayerActivity::class.java))
             }
-            R.id.btn_play_flow_page->{
+            binding.btnPlayFlowPage -> {
                 startActivity(Intent(this, FlowPlayerActivity::class.java))
 
             }
-            R.id.btn_music_list_page->{
+            binding.btnMusicListPage -> {
                 startActivity(Intent(this, MusicActivity::class.java))
             }
 
-            R.id.btn_home->{
+            binding.btnHome -> {
                 startActivity(Intent(this, HomeActivity::class.java))
 
             }
-            R.id.btn_taobao->{
+            binding.btnTaobao -> {
                 startActivity(Intent(this, OnSellActivity::class.java))
 
             }
