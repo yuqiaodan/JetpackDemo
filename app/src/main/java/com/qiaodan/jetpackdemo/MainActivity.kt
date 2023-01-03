@@ -1,23 +1,25 @@
 package com.qiaodan.jetpackdemo
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.qiaodan.jetpackdemo.custom.login.LoginActivity
-import com.qiaodan.jetpackdemo.home.HomeActivity
 import com.qiaodan.jetpackdemo.custom.musiclist.MusicActivity
 import com.qiaodan.jetpackdemo.custom.player.FlowPlayerActivity
 import com.qiaodan.jetpackdemo.custom.player.PlayerActivity
 import com.qiaodan.jetpackdemo.databinding.ActivityMainBinding
+import com.qiaodan.jetpackdemo.home.HomeActivity
 import com.qiaodan.jetpackdemo.taobao.OnSellActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var binding: ActivityMainBinding
+    private val binding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnLoginPage.setOnClickListener(this)
         binding.btnPlayPage.setOnClickListener(this)

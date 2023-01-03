@@ -4,9 +4,8 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.viewModelFactory
 import com.qiaodan.jetpackdemo.App
-import kotlinx.coroutines.GlobalScope
+import com.qiaodan.jetpackdemo.taobao.api.bean.OnShellBean
 import kotlinx.coroutines.launch
 
 /**
@@ -18,7 +17,7 @@ class OnSellViewModel : ViewModel() {
     //当前页
     private var mCurrentPage = 1
 
-    val contentList = MutableLiveData<MutableList<String>>()
+    val contentList = MutableLiveData<List<OnShellBean.TbkDgOptimusMaterialResponse.ResultList.MapData>>()
 
     private val onShellRepository by lazy {
         OnSellRepository()
@@ -47,7 +46,7 @@ class OnSellViewModel : ViewModel() {
         viewModelScope.launch {
             val data = onShellRepository.getOnShellList(page)
             Log.d(App.TAG, "请求到数据 $data")
-
+            contentList.postValue(data.tbk_dg_optimus_material_response.result_list.map_data)
         }
 
 
