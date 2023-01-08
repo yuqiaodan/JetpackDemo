@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.binding.demo1
+package com.qiaodan.jetpackdemo.binddemo
 
 /**
  * Create by yuqiaodan 2023/1/8

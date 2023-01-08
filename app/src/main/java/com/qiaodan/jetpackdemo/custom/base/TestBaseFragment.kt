@@ -9,7 +9,7 @@ import com.qiaodan.jetpackdemo.custom.lifecycle.ILifeState
  * Create by yuqiaodan 2022/12/25
  * Description:
  */
-open class BaseFragment:Fragment() {
+open class TestBaseFragment:Fragment() {
 
     val lifeProvider by lazy {
         ILifeCycle()

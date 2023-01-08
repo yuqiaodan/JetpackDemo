@@ -1,13 +1,12 @@
 package com.qiaodan.jetpackdemo.custom.player
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.qiaodan.jetpackdemo.R
-import com.qiaodan.jetpackdemo.custom.base.BaseActivity
+import com.qiaodan.jetpackdemo.custom.base.TestBaseActivity
 import kotlinx.android.synthetic.main.activity_player.*
 
-class PlayerActivity : BaseActivity(), View.OnClickListener {
+class PlayerActivityTest : TestBaseActivity(), View.OnClickListener {
 
     private val playerPresenter by lazy {
         PlayerPresenter.instance

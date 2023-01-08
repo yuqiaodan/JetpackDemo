@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_home.*
  */
 class HomeActivity : AppCompatActivity() {
 
+
     private val presenter by lazy {
         HomePresenter(this)
     }

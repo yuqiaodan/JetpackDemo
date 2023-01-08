@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.binding.base
+package com.qiaodan.jetpackdemo.mvvm.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

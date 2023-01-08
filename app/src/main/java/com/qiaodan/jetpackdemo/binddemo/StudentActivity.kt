@@ -1,4 +1,4 @@
-package com.qiaodan.jetpackdemo.binding.demo1
+package com.qiaodan.jetpackdemo.binddemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

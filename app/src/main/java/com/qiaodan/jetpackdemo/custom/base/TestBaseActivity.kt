@@ -6,7 +6,7 @@ import com.qiaodan.jetpackdemo.custom.lifecycle.ILifecycleOwner
 import com.qiaodan.jetpackdemo.custom.lifecycle.ILifeCycle
 import com.qiaodan.jetpackdemo.custom.lifecycle.ILifeState
 
-open class BaseActivity : AppCompatActivity(), ILifecycleOwner {
+open class TestBaseActivity : AppCompatActivity(), ILifecycleOwner {
 
     val lifeProvider by lazy {
         ILifeCycle()

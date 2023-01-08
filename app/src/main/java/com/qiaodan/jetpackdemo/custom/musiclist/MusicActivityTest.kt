@@ -2,8 +2,7 @@ package com.qiaodan.jetpackdemo.custom.musiclist
 
 import android.os.Bundle
 import com.qiaodan.jetpackdemo.R
-import com.qiaodan.jetpackdemo.custom.base.BaseActivity
-import com.qiaodan.jetpackdemo.custom.lifecycle.ILifeCycle
+import com.qiaodan.jetpackdemo.custom.base.TestBaseActivity
 import kotlinx.android.synthetic.main.activity_music.*
 
 
@@ -16,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_music.*
  * onStop 不可见 不可交互
  * onDestroy 销毁
  * */
-class MusicActivity : BaseActivity(){
+class MusicActivityTest : TestBaseActivity(){
 
 
     private val musicPresenter by lazy {
