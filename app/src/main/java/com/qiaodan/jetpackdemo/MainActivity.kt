@@ -4,14 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.qiaodan.jetpackdemo.binddemo.StudentActivity
-import com.qiaodan.jetpackdemo.custom.login.LoginActivity
-import com.qiaodan.jetpackdemo.custom.musiclist.MusicActivityTest
-import com.qiaodan.jetpackdemo.custom.player.FlowPlayerActivity
-import com.qiaodan.jetpackdemo.custom.player.PlayerActivityTest
+import com.qiaodan.jetpackdemo.demo3_databinding.binddemo.StudentActivity
+import com.qiaodan.jetpackdemo.demo1_livedata.custom.login.LoginActivity
+import com.qiaodan.jetpackdemo.demo1_livedata.custom.musiclist.MusicActivityTest
+import com.qiaodan.jetpackdemo.demo1_livedata.custom.player.FlowPlayerActivity
+import com.qiaodan.jetpackdemo.demo1_livedata.custom.player.PlayerActivityTest
 import com.qiaodan.jetpackdemo.databinding.ActivityMainBinding
-import com.qiaodan.jetpackdemo.home.HomeActivity
-import com.qiaodan.jetpackdemo.taobao.OnSellActivity
+import com.qiaodan.jetpackdemo.demo1_livedata.home.HomeActivity
+import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.OnSellActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 

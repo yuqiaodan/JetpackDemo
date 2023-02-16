@@ -6,13 +6,13 @@
     <data>
         <variable
             name="user"
-            type="com.qiaodan.jetpackdemo.mvvm.binddemo.User" />
+            type="com.qiaodan.jetpackdemo.demo3_databinding.binddemo.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".binddemo.StudentActivity">
+        tools:context=".demo3_databinding.binddemo.StudentActivity">
 
 
         <LinearLayout

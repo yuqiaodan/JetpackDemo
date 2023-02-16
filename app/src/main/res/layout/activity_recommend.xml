@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".taobao.OnSellActivity">
+    tools:context=".demo2_viewmodel.taobao.OnSellActivity">
 
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/content_list_rv"

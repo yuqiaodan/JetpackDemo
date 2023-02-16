@@ -17,45 +17,45 @@
         android:theme="@style/Theme.JetpackDemo"
         tools:targetApi="31">
         <activity
-            android:name="com.qiaodan.jetpackdemo.binddemo.StudentActivity"
+            android:name="com.qiaodan.jetpackdemo.demo3_databinding.binddemo.StudentActivity"
             android:exported="false" />
         <activity
-            android:name=".taobao.OnSellActivity"
+            android:name=".demo2_viewmodel.taobao.OnSellActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".home.HomeActivity"
+            android:name=".demo1_livedata.home.HomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".custom.musiclist.MusicActivityTest"
+            android:name=".demo1_livedata.custom.musiclist.MusicActivityTest"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".custom.player.FlowPlayerActivity"
+            android:name=".demo1_livedata.custom.player.FlowPlayerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".custom.player.PlayerActivityTest"
+            android:name=".demo1_livedata.custom.player.PlayerActivityTest"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.qiaodan.jetpackdemo.custom.login.LoginActivity"
+            android:name="com.qiaodan.jetpackdemo.demo1_livedata.custom.login.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

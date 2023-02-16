@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.musiclist.MusicActivityTest">
+    tools:context=".demo1_livedata.custom.musiclist.MusicActivityTest">
 
     <Button
         android:id="@+id/btn_get_music_list"
