@@ -5,7 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.qiaodan.jetpackdemo.App
-import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellBean
+import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellApiBean
+import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellItem
 import kotlinx.coroutines.launch
 
 /**
@@ -17,7 +18,7 @@ class OnSellViewModel : ViewModel() {
     //当前页
     private var mCurrentPage = 1
 
-    val contentList = MutableLiveData<List<OnShellBean.TbkDgOptimusMaterialResponse.ResultList.MapData>>()
+    val contentList = MutableLiveData<List<OnShellItem>>()
 
     private val onShellRepository by lazy {
         OnSellRepository()

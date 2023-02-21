@@ -1,7 +1,8 @@
 package com.qiaodan.jetpackdemo.demo3_databinding.binddemo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.qiaodan.jetpackdemo.databinding.ActivityStudentBinding
 
 class StudentActivity : AppCompatActivity() {

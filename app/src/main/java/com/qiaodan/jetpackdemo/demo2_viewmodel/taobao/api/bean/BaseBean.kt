@@ -9,8 +9,8 @@ import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.ApiException
  */
 data class BaseBean<T>(
     val code: Int,
-    @SerializedName("data")
-    val content: T,
+    //@SerializedName("data")
+    val data: T,
     val message: String,
     val success: Boolean
 ){
@@ -20,7 +20,7 @@ data class BaseBean<T>(
 
     fun apiData():T{
         if(code== SUCCESS_CODE){
-            return content
+            return data
         }else{
             throw ApiException(code,message)
         }

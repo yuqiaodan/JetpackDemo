@@ -11,14 +11,14 @@ import androidx.fragment.app.Fragment
  * Description:普通base fragment
  */
 abstract class BaseFragment : Fragment() {
-
     protected lateinit var mView: View
-
-    abstract fun getSubLayoutId(): Int
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mView = inflater.inflate(getSubLayoutId(), container, false)
         return mView
     }
+
+    abstract fun getSubLayoutId(): Int
+
 
 }

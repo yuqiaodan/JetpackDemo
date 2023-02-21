@@ -1,7 +1,7 @@
 package com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api
 
 import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.BaseBean
-import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellBean
+import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellApiBean
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -17,7 +17,7 @@ interface ApiService {
 
 
     @GET("onSell/{page}")
-    suspend fun getOnSellList(@Path("page") page: Int): BaseBean<OnShellBean>
+    suspend fun getOnSellList(@Path("page") page: Int): BaseBean<OnShellApiBean>
 
 
 }
