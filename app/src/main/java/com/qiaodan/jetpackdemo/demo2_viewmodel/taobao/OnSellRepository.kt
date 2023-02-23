@@ -10,7 +10,7 @@ import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellApiBean
 class OnSellRepository {
 
     suspend fun getOnShellList(page: Int): OnShellApiBean {
-        return RetrofitClient.apiService.getOnSellList(page).apiData()
+        return RetrofitClient.apiService.getOnSellList(page).data
     }
 
 

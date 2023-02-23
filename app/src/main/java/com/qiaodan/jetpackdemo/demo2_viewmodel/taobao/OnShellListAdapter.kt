@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.qiaodan.jetpackdemo.R
 import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellApiBean
+import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellItem
 
 /**
  * author: created by yuqiaodan on 2023/1/3 17:46
@@ -15,9 +16,9 @@ import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellApiBean
 class OnShellListAdapter : RecyclerView.Adapter<OnShellListAdapter.InnerHolder>() {
 
 
-    private val mContent = arrayListOf<OnShellApiBean.TbkDgOptimusMaterialResponse.ResultList.OnShellItem>()
+    private val mContent = arrayListOf<OnShellItem>()
 
-    fun setData(newList: List<OnShellApiBean.TbkDgOptimusMaterialResponse.ResultList.OnShellItem>) {
+    fun setData(newList: List<OnShellItem>) {
         mContent.clear()
         mContent.addAll(newList)
         notifyDataSetChanged()

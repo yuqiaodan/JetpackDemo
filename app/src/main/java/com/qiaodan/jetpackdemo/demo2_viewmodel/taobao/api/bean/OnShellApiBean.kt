@@ -15,7 +15,7 @@ data class OnShellApiBean(
         val result_list: ResultList
     ) {
         data class ResultList(
-            val map_data: List<OnShellItem>
+            val map_data: MutableList<OnShellItem>
         )
     }
 

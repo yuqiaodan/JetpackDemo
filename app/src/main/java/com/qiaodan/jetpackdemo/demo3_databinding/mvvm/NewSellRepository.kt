@@ -1,6 +1,7 @@
 package com.qiaodan.jetpackdemo.demo3_databinding.mvvm
 
 import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.RetrofitClient
+import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.BaseBean
 import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellApiBean
 
 /**
@@ -9,8 +10,8 @@ import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.api.bean.OnShellApiBean
  */
 class NewSellRepository {
 
-    suspend fun getOnShellList(page: Int): OnShellApiBean {
-        return RetrofitClient.apiService.getOnSellList(page).apiData()
+    suspend fun getOnShellList(page: Int): BaseBean<OnShellApiBean> {
+        return RetrofitClient.apiService.getOnSellList(page)
     }
 
 }

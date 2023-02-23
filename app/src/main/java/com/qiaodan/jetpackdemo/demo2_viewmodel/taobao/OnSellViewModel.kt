@@ -18,7 +18,7 @@ class OnSellViewModel : ViewModel() {
     //当前页
     private var mCurrentPage = 1
 
-    val contentList = MutableLiveData<List<OnShellItem>>()
+    val contentList = MutableLiveData<MutableList<OnShellItem>>()
 
     private val onShellRepository by lazy {
         OnSellRepository()

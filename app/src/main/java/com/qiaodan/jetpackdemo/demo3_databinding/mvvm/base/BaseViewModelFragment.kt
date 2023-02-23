@@ -23,7 +23,7 @@ abstract class BaseViewModelFragment<V : ViewDataBinding, VM : ViewModel> : Base
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initViewModel()
         super.onViewCreated(view, savedInstanceState)
-        observerData()
+        initDataObserver()
     }
 
     /**
@@ -41,7 +41,7 @@ abstract class BaseViewModelFragment<V : ViewDataBinding, VM : ViewModel> : Base
     /**
      * 设置数据观察
      * */
-    open fun observerData(){}
+    open fun initDataObserver(){}
 
 
 

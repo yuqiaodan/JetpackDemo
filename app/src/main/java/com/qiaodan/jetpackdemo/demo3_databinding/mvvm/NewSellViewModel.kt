@@ -1,5 +1,6 @@
 package com.qiaodan.jetpackdemo.demo3_databinding.mvvm
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -26,7 +27,11 @@ class NewSellViewModel : ViewModel() {
 
 
     //当前加载页码
-    var mCurrentPage = 1
+    private var mCurrentPage = 1
+
+    private val repository by lazy {
+        NewSellRepository()
+    }
 
 
     fun loadData() {
@@ -35,14 +40,24 @@ class NewSellViewModel : ViewModel() {
     }
 
 
-
-
-
     private fun loadDataByPage(page: Int) {
         viewModelScope.launch {
-
+            try {
+                val result = repository.getOnShellList(page)
+                Log.d("NewSellTag", "code:${result.code}")
+                Log.d("NewSellTag", "message:${result.message}")
+                Log.d("NewSellTag", "data:${result.data.tbk_dg_optimus_material_response.result_list}")
+                val dataList=result.data.tbk_dg_optimus_material_response.result_list.map_data
+                if(dataList.isEmpty()){
+                    loadState.postValue(LoadState.EMPTY)
+                }else{
+                    contentList.postValue(dataList)
+                    loadState.postValue(LoadState.SUCCESS)
+                }
+            }catch (e:Exception){
+                loadState.postValue(LoadState.ERROR)
+            }
         }
-
     }
 
 

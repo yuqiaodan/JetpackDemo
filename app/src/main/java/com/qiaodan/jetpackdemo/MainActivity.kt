@@ -12,6 +12,7 @@ import com.qiaodan.jetpackdemo.demo1_livedata.custom.player.PlayerActivityTest
 import com.qiaodan.jetpackdemo.databinding.ActivityMainBinding
 import com.qiaodan.jetpackdemo.demo1_livedata.home.HomeActivity
 import com.qiaodan.jetpackdemo.demo2_viewmodel.taobao.OnSellActivity
+import com.qiaodan.jetpackdemo.demo3_databinding.mvvm.NewShellActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnHome.setOnClickListener(this)
         binding.btnTaobao.setOnClickListener(this)
         binding.btnStudent.setOnClickListener(this)
+        binding.btnNewShell.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -56,6 +58,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             binding.btnStudent->{
                 startActivity(Intent(this, StudentActivity::class.java))
+            }
+            binding.btnNewShell->{
+                startActivity(Intent(this, NewShellActivity::class.java))
+
             }
         }
     }

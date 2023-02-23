@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.databinding.adapters.ViewBindingAdapter
 import androidx.fragment.app.Fragment
 
 /**
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment
 abstract class BaseViewFragment<V : ViewDataBinding> : Fragment() {
 
     protected lateinit var binding: V
+
 
     abstract fun getSubLayoutId(): Int
 
@@ -34,7 +36,6 @@ abstract class BaseViewFragment<V : ViewDataBinding> : Fragment() {
     }
 
 
-
-    open fun initView(){}
+    open fun initView() {}
 
 }
